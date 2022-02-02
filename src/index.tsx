@@ -4,10 +4,14 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import GlobalStyle from "./GlobalStyle";
 
+import { CombinedProviders } from "./state/combineProviders";
+
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
-    <App />
+    <CombinedProviders>
+      <App />
+    </CombinedProviders>
   </React.StrictMode>,
   document.getElementById("root")
 );

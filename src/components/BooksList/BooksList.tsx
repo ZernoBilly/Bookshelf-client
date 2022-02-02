@@ -1,13 +1,23 @@
-import React from "react";
-import useFetch from "../../hooks/useFetch";
+import React, { useContext } from "react";
 
 import { BookListContainer } from "./styled";
 
-const BooksList = () => {
-  const BOOKS_URL = "http://localhost:5003/books/";
-  const { data, loading, error } = useFetch(BOOKS_URL, "GET");
+import BookItem from "../BookItem/BookItem";
 
-  return <BookListContainer></BookListContainer>;
+import { BookContext } from "../../state/contexts/booksContext";
+
+const BooksList = () => {
+  const [booksState, setBooksState] = useContext(BookContext);
+  const isBooks = booksState.books.length;
+
+  return (
+    <BookListContainer>
+      {isBooks &&
+        booksState.books.map((book, index) => (
+          <BookItem book={book} key={index} />
+        ))}
+    </BookListContainer>
+  );
 };
 
 export default BooksList;

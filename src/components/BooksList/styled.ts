@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const BookListContainer = styled.div`
-  height: 100%;
   width: 50%;
-  background-color: blue;
   padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  overflow: scroll;
 `;

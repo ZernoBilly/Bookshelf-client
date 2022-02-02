@@ -1,8 +1,7 @@
-interface IBook {
+export interface IBook {
   id: string;
+  _id?: string;
   title: string;
   author: string;
   description: string;
 }
-
-export default IBook;
