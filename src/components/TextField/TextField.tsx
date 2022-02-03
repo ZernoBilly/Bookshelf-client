@@ -6,6 +6,7 @@ type TextFieldProps = {
   label: string;
   rows: number;
   name: string;
+  value: string;
   handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
@@ -14,6 +15,7 @@ const TextField: React.FC<TextFieldProps> = ({
   rows,
   handleChange,
   name,
+  value,
 }) => {
   return (
     <TextAreaContainer>
@@ -22,6 +24,7 @@ const TextField: React.FC<TextFieldProps> = ({
         rows={rows}
         onChange={(event) => handleChange(event)}
         name={name}
+        value={value}
       />
     </TextAreaContainer>
   );

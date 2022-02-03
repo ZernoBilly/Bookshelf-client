@@ -1,5 +1,5 @@
 export interface IInputValues {
-  title: string | null;
-  author: string | null;
-  description: string | null;
+  title: string;
+  author: string;
+  description: string;
 }

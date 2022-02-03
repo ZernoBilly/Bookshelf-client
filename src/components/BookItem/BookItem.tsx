@@ -16,20 +16,20 @@ const BookItem: React.FC<BookItemProps> = ({ book }) => {
   const [, setSelectedBook] = useContext(SelectedBookContext);
 
   const handleClick = () => {
-    const _selectedBook: IBook = {
+    const newSelectedBook: IBook = {
       id: book._id as string,
       title: book.title,
       author: book.author,
       description: book.description,
     };
 
-    const _inputValues: IInputValues = {
+    const newInputValues: IInputValues = {
       title: book.title,
       author: book.author,
       description: book.description,
     };
-    setSelectedBook(_selectedBook);
-    setInputValues(_inputValues);
+    setSelectedBook(newSelectedBook);
+    setInputValues(newInputValues);
   };
 
   return (
